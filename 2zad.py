@@ -1,24 +1,24 @@
-from random import randint
-n=int(input("Введите n:  "))
-m=int(input("Введите m:  "))
-print("У вас есть 4 хода")
-print("")
-pole=[]
-kartoshek=0
-  
-pole=[[randint(-1,10) for g in range(n)] for i in range(m)]
-for i in range(1,4+1):
-	x = int(input("Введите x:  "))
-	y = int(input("Введите y:  "))
-	kartoshek+=pole[x-1][y-1]
-	print("у вас осталось",4-i,"ходов")
-print("Вам удалось собрать",kartoshek,"картошек")
-if kartoshek>=20:
-	print("Победа")
-else:
-	print("Поражение")
+kolvo_zaprosov = int(input("Введите количество запросов "))
+old_imena = []
+new_imena = []
 
-for l in range(n):
-	for o in range(m):
-		print(pole[l][o],end="  ")
-	print("")
+
+n = kolvo_zaprosov
+for  i in range(kolvo_zaprosov):
+    nik = input("Введите текущий никнейм")
+    newnik = input("Введите new ник")
+
+    if nik not in new_imena:
+        old_imena.append(nik)
+        new_imena.append(newnik)
+    else:
+        for i in range(len(new_imena)):
+            if new_imena[i] == nik:
+                new_imena[i] = newnik
+        n -= 1
+print(n)
+
+
+for i in range(len(old_imena)):
+    print(old_imena[i],new_imena[i],end="  ")
+    print("")
