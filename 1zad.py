@@ -1,23 +1,19 @@
-message = input("Введите сообщение") + "I"
-count = 1
-simvol = ""
-vivodmessage = ""
+perv = input()
+vtor = input()
+kolvo = 0
+dlina = len(perv)
+counter = 0
 
 
-while message != "quitI":
+for i in vtor:
+    if i == perv[counter]:
+        counter += 1
 
-    for i in range(len(message)-1):
-        if message[i] == message[i+1]:
-            count += 1
-            simvol = message[i]
-        if message[i] != message[i+1]:
-            if count == 1:
-                vivodmessage += message[i]
-            if count > 1:
-                vivodmessage += simvol + str(count)
-            count = 1
+    else:
+        counter = 0
 
+    if counter == dlina:
+        kolvo += 1
+        counter = 0
 
-    print(vivodmessage)
-    vivodmessage = ""
-    message = input("Введите сообщение") + "I"
+print(kolvo)
