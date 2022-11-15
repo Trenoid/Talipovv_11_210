@@ -1,19 +1,11 @@
-perv = input()
-vtor = input()
-kolvo = 0
-dlina = len(perv)
-counter = 0
+spisok_chisel = []
+Proizvedenie = 1
+kolvo_chisel= int(input())
+for i in range(kolvo_chisel):
+    chislo = float(input())
+    spisok_chisel.append(chislo)
+for j in range(kolvo_chisel):
+    if spisok_chisel[j] >0:
+        Proizvedenie *= spisok_chisel[j]
 
-
-for i in vtor:
-    if i == perv[counter]:
-        counter += 1
-
-    else:
-        counter = 0
-
-    if counter == dlina:
-        kolvo += 1
-        counter = 0
-
-print(kolvo)
+print(Proizvedenie)
