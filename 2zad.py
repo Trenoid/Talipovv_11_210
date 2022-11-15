@@ -1,71 +1,24 @@
-man = ["ов", "ев", "ин", "ын", "ский", "цкий"]
-woman = ["ова", "ева", "ина", "ына", "ская", "цкая"]
-spisok = input()
-delimetr = " "
-a = []
-a.append(spisok)
-a = delimetr.join(a)
-a = a.split(delimetr)
-kolvo_man = 0
-kolvo_woman = 0
-dlina = 0
-okonch = ""
-const = 4
-neconst = 0
-vrem = 0
+a = int(input())
+k = int(input())
+b = ""
+a_1 = a
+k_1 = k
+while a > 0:
+    b = str(a % 2) + b
+    a = a // 2
+vivod = int(b)
+for i in range(k):
+    if vivod % 10 == 0:
+        vivod = vivod/10
+    if vivod % 10 == 1:
+        vivod = vivod//10 +1
 
-for i in a:
-    dlina = len(i)
-    for j in range(dlina-1,0-1,-1):
-        if neconst != 4:
-            okonch += i[j]
-            neconst += 1
-    okonch = okonch[::-1]
-
-
-    for m in range(len(woman)):
-        perv = woman[m]
-        vtor = okonch
-        dlina = len(perv)
-        counter = 0
-
-        for i in vtor:
-            if i == perv[counter]:
-                counter += 1
-
-            else:
-                counter = 0
-
-            if counter == dlina:
-                kolvo_woman +=1
-                counter = 0
-                vrem= 1
-    if vrem == 0:
-        for n in range(len(man)):
-            perv = man[n]
-            vtor = okonch
-            kolvo = 0
-            dlina = len(perv)
-            counter = 0
-
-            for i in vtor:
-                if i == perv[counter]:
-                    counter += 1
-
-                else:
-                    counter = 0
-
-                if counter == dlina:
-                    kolvo_man += 1
-                    counter = 0
-    vrem = 0
-
-
-
-
-
-    neconst = 0
-    okonch = ""
-
-print(kolvo_woman)
-print(kolvo_man)
+vivod = int(vivod)
+b = 0
+s = 0
+dlina = len(str(vivod))
+for k in range(0,dlina):
+    b = (vivod%10)*(2**(k))
+    s += b
+    vivod= vivod//10
+print(a_1,":","(","2","^",k_1,")","=",s)
