@@ -26,6 +26,7 @@ class poiskovik:
 
 
 
-a = poiskovik([4,12,15,17,54,34,23,36,78,45,65,39,21,56])
+a = poiskovik([4,12,15,17,54,34,23,36,78,45,65,39,45]) 
 print(a.UporMassiv)
-print(f"{a.poisk(34)} ---index, {a.poisk(34)+1}--- Порядковый номер ")
+number = 34   #### какое число найти
+print(f"{a.poisk(number)} ---index, {a.poisk(number)+1}--- Порядковый номер ")
